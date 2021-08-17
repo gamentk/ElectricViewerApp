@@ -39,7 +39,7 @@ const RootStackScreen = ({ userToken }) => (
 
 // Entry Point
 const App = () => {
-    const [userToken, setUserToken] = React.useState('admin');
+    const [userToken, setUserToken] = React.useState(null);
 
     const authContext = React.useMemo(() => {
         return {

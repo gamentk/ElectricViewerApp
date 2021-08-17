@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     View,
     Text,
@@ -9,20 +9,29 @@ import {
 // Components
 import InfoBox from './InfoBox';
 import { DrawerHamburger } from '../../components';
-import { COLORS } from '../../constants';
 
 // Constants
+import { COLORS } from '../../constants';
 
 const PhaseScreen = ({ navigation }) => {
+    // const [info, setInfo] = useState(Array.from({ length: 6 }));
+
     // Dummy Info
     const info = [
-        { title: 'VOLT', value: 193.2 },
-        { title: 'AMP', value: 16.39 },
-        { title: 'WATT', value: 3135.6 },
-        { title: 'KWH', value: 3.574 },
+        { title: 'VOLT', value: (Math.random() * (220 - 190) + 190).toFixed(2) },
+        { title: 'AMP', value: (Math.random() * (100 - 50) + 50).toFixed(2) },
+        { title: 'WATT', value: (Math.random() * (3000 - 1500) + 1500).toFixed(2) },
+        { title: 'KWH', value: (Math.random() * (3 - 1) + 1).toFixed(2) },
         { title: 'HZ', value: 49.9 },
         { title: 'PF', value: 0.99 },
     ]
+
+    // Component Did Mount
+    useEffect(() => {
+        setInterval(() => {
+
+        }, 1000)
+    }, []);
 
     // Render Header
     function renderHeader() {
